@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+</head>
+<!--in CRUD this is the read template-->
+
+<body>
+    <h1>Edit a Todo Item</h1>
+    <!--GET request takes information from the server-->
+    <!--POST requests push informatio to the server-->
+    <form method="POST">
+        <!--csrf token must be Django as a security measure-->
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+            <p>
+                <button type="submit">Update Item </button>
+            </p>
+        </div>
+    </form>
+</body>
+
+</html>
