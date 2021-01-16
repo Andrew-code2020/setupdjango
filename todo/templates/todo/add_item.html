@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+</head>
+<!--in CRUD this is the read template-->
+
+<body>
+    <h1>Add a Todo Item</h1>
+    <!--GET request takes information from the server-->
+    <!--POST requests push informatio to the server-->
+    <form method="POST" action="add">
+        <!--csrf token must be Django as a security measure-->
+        {% csrf_token %}
+        <div>
+            <p>
+                <label for="id_name">Name : </label>
+                <input type="text" id="id_name" name="item_name">
+            </p>
+        </div>
+        <div>
+            <p><label for="id_done">Done : </label>
+                <input type="checkbox" id="id_done" name="done"></p>
+        </div>
+        <div>
+            <p>
+                <button type="submit">Add Item </button>
+            </p>
+        </div>
+    </form>
+</body>
+
+</html>
